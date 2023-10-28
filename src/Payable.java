@@ -1,7 +1,3 @@
 public interface Payable {
-
-    class Payment{
-        ;
-    }
-
+    void Payment();
 }

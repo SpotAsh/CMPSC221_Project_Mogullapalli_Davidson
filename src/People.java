@@ -1,4 +1,4 @@
-public abstract class People {
+public abstract class People implements Payable {
     // variables
     //Name
     private String f_name;
