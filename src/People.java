@@ -1,3 +1,4 @@
+// people superclass which implements the payable interface
 public abstract class People implements Payable {
     // variables
     //Name
@@ -53,5 +54,13 @@ public abstract class People implements Payable {
     public String getState() { return state; }
     public int getZipcode() { return zipcode; }
 
+    // implementing payable interface
+    public void Payment(){
+        System.out.println("Payable: ");
+        // is this supposed to have three calculations? for advisor payment, tuition??
+    }
+
+    //abstract display method
+    public abstract void display();
 
 }

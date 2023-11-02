@@ -8,6 +8,7 @@ public class Advisor extends People{
 
     //constructor
     public Advisor(String title, double annualSalary, Date hiredDate, Student[] advisees) {
+        super();
         this.title = title;
         this.annualSalary = annualSalary;
         this.hiredDate = hiredDate;
@@ -26,4 +27,12 @@ public class Advisor extends People{
 
     public void setAdvisees(Student[] advisees) { this.advisees = advisees; }
     public Student[] getAdvisees() { return advisees; }
+
+    public int calcAnnualSalary(){ // should this be payment() ?
+        super();
+        return 0;
+    }
+    public void display(){
+        System.out.println("Name: ");
+    }
 }

@@ -8,6 +8,7 @@ public class Student extends People{
 
     //constructor
     public Student(String major, double tuitionPerSemester, Date admittedDate, Course[] courses){
+        super(); // am i putting all the people variables in here?
         this.major = major;
         this.tuitionPerSemester = tuitionPerSemester;
         this.admittedDate = admittedDate;
@@ -27,4 +28,18 @@ public class Student extends People{
 
     public void setCourses(Course[] courses) { this.courses = courses; }
     public Course[] getCourses() { return courses; }
+
+    // superclass method ??
+    @Override
+    public void Payment(){
+        System.out.println("Tuition: "); // TODO: superclass method
+    }
+
+    // display student's information
+    public void display(){
+        System.out.println("Major: " + major);
+        System.out.println("Tuition Per Semester: " + tuitionPerSemester);
+        System.out.println("Admission Date: " + admittedDate);
+        System.out.println("Course: " + courses); // TODO: make it a loop?
+    }
 }
