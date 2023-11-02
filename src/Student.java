@@ -7,8 +7,10 @@ public class Student extends People{
     private Course[] courses;
 
     //constructor
-    public Student(String major, double tuitionPerSemester, Date admittedDate, Course[] courses){
-        super(); // am i putting all the people variables in here?
+    public Student(String firstName, String middleName, String lastName, String academicID, int phone, String email,
+                   int street_number, String city, String state, int zipcode, String major, double tuitionPerSemester,
+                   Date admittedDate, Course[] courses){
+        super(firstName, middleName, lastName, academicID, phone, email, street_number, city, state, zipcode);
         this.major = major;
         this.tuitionPerSemester = tuitionPerSemester;
         this.admittedDate = admittedDate;
@@ -32,7 +34,8 @@ public class Student extends People{
     // superclass method ??
     @Override
     public void Payment(){
-        System.out.println("Tuition: "); // TODO: superclass method
+      double tuition = tuitionPerSemester;
+      System.out.println("The Student's total tuition per Semester is: $" +tuition);
     }
 
     // display student's information

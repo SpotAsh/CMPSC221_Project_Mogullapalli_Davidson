@@ -7,8 +7,10 @@ public class Advisor extends People{
     private Student[] advisees;
 
     //constructor
-    public Advisor(String title, double annualSalary, Date hiredDate, Student[] advisees) {
-        super();
+    public Advisor(String firstName, String middleName, String lastName, String ID, int phone, String email,
+                   int street_number, String city, String state, int zipcode,
+                   String title, double annualSalary, Date hiredDate, Student[] advisees) {
+        super(firstName, middleName, lastName, ID, phone, email, street_number, city, state, zipcode);
         this.title = title;
         this.annualSalary = annualSalary;
         this.hiredDate = hiredDate;
@@ -28,9 +30,10 @@ public class Advisor extends People{
     public void setAdvisees(Student[] advisees) { this.advisees = advisees; }
     public Student[] getAdvisees() { return advisees; }
 
-    public int calcAnnualSalary(){ // should this be payment() ?
-        super();
-        return 0;
+    @Override
+    public void Payment(){
+        double monthlyPayment = annualSalary / 2;
+        System.out.println("Advisor's monthyl payment: " + monthlyPayment);
     }
     public void display(){
         System.out.println("Name: ");

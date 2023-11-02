@@ -55,9 +55,9 @@ public abstract class People implements Payable {
     public int getZipcode() { return zipcode; }
 
     // implementing payable interface
+    @Override
     public void Payment(){
-        System.out.println("Payable: ");
-        // is this supposed to have three calculations? for advisor payment, tuition??
+        System.out.println("Payment: ");
     }
 
     //abstract display method
