@@ -1,43 +1,32 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 
-public class Main {
+
+class Main {
     public static void main(String[] args) {
-        // Creating a course
-        Course course1 = new Course("CS101", 3, 500.00);
-        Course course2 = new Course("Math101", 4, 450.00);
+        // creating courses
+        Course course1 = new Course("COMP SCI 131", 3, 500.00);
+        Course course2 = new Course("Math 141", 4, 450.00);
+        Course course3 = new Course("Art 50", 3, 350.00);
 
-        // Creating an array of courses
-        Course[] courses = {course1, course2};
+        // array for courses
+        Course[] courses = {course1, course2, course3};
 
-        // Creating a student
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date admittedDate = null;
-        try {
-            admittedDate = dateFormat.parse("2023-09-01");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        // creating students
+        LocalDate admittedDate = LocalDate.of(2023, 9, 1);
         Student student = new Student("John", "Doe", "Smith", "12345", 555555555, "john@example.com",
                 123, "Springfield", "IL", 62701, "Computer Science", 2500.00, admittedDate, courses);
 
-        // Creating an advisor
-        Date hiredDate = null;
-        try {
-            hiredDate = dateFormat.parse("2022-01-15");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        // creating advisor
+        LocalDate hiredDate = LocalDate.of(2022, 1, 15);
         Advisor advisor = new Advisor("Alice", "Advisor", "Johnson", "56789", 555555556, "alice@example.com",
                 456, "Springfield", "IL", 62702, "Academic Advisor", 60000.00, hiredDate, new Student[]{student});
 
-        // Display student information
+        // displaying student information
         System.out.println("Student Information:");
         student.display();
         student.Payment();  // Calling the Payment method of the student
 
-        // Display advisor information
+        // displaying advisor's information
         System.out.println("\nAdvisor Information:");
         advisor.display();
         advisor.Payment();  // Calling the Payment method of the advisor

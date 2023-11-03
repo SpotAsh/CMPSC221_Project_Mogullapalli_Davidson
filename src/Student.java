@@ -1,15 +1,16 @@
-import java.util.Date;  //needed for admitted date
+import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Student extends People{
     private String major;
     private double tuitionPerSemester;
-    private Date admittedDate;
+    private LocalDate admittedDate;
     private Course[] courses;
 
     //constructor
     public Student(String firstName, String middleName, String lastName, String academicID, int phone, String email,
                    int street_number, String city, String state, int zipcode, String major, double tuitionPerSemester,
-                   Date admittedDate, Course[] courses){
+                   LocalDate admittedDate, Course[] courses){
         super(firstName, middleName, lastName, academicID, phone, email, street_number, city, state, zipcode);
         this.major = major;
         this.tuitionPerSemester = tuitionPerSemester;
@@ -25,8 +26,8 @@ public class Student extends People{
     public void setTuitionPerSemester(double tuitionPerSemester) { this.tuitionPerSemester = tuitionPerSemester; }
     public double getTuitionPerSemester() { return tuitionPerSemester; }
 
-    public void setAdmittedDate(Date admittedDate) { this.admittedDate = admittedDate; }
-    public Date getAdmittedDate() { return admittedDate; }
+    public void setAdmittedDate(LocalDate admittedDate) { this.admittedDate = admittedDate; }
+    public LocalDate getAdmittedDate() { return admittedDate; }
 
     public void setCourses(Course[] courses) { this.courses = courses; }
     public Course[] getCourses() { return courses; }
@@ -43,6 +44,6 @@ public class Student extends People{
         System.out.println("Major: " + major);
         System.out.println("Tuition Per Semester: " + tuitionPerSemester);
         System.out.println("Admission Date: " + admittedDate);
-        System.out.println("Course: " + courses); // TODO: make it a loop?
+        System.out.println("Course: " + Arrays.toString(courses)); // TODO: make it a loop?
     }
 }
