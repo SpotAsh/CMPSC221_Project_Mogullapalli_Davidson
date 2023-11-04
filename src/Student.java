@@ -44,6 +44,6 @@ public class Student extends People{
         System.out.println("Major: " + major);
         System.out.println("Tuition Per Semester: " + tuitionPerSemester);
         System.out.println("Admission Date: " + admittedDate);
-        System.out.println("Course: " + Arrays.toString(courses)); // TODO: make it a loop?
+        System.out.println("Course: " + Arrays.toString(courses));
     }
 }
