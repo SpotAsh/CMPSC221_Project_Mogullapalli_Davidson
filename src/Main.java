@@ -160,6 +160,8 @@ public class Main {
                 advisorToEdit.setHiredDate(hiredDate);
             } catch (ParseException e) {
                 e.printStackTrace();
+                // if the input doesn't match the given format, the code will throw an error and
+                // tell the user what the correct format is
             }
 
             System.out.println("Advisor information updated successfully.");
