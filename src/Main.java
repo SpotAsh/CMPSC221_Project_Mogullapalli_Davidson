@@ -14,6 +14,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        //loop through the menu while true
         while (true) {
             System.out.println("Menu:");
             System.out.println("1. Add Advisor");
@@ -80,7 +81,7 @@ public class Main {
         System.out.print("Enter the zipcode: ");
         String zipcode = scanner.next();
 
-        System.out.print("Enter the titlee: ");
+        System.out.print("Enter the title: ");
         String title = scanner.next();
 
         System.out.print("Enter the annual salary: ");
