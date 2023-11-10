@@ -11,14 +11,14 @@ public abstract class People implements Payable {
     private String email;
 
     //Address
-    private int street_number;
+    private String street_number;
     private String city;
     private String state;
     private int zipcode;
 
     //constructor
     public People(String f_name, String m_name, String l_name, String ID, int phone_number, String email,
-                  int street_number, String city, String state, int zipcode){
+                  String street_number, String city, String state, int zipcode){
         this.f_name = f_name;
         this.m_name = m_name;
         this.l_name = l_name;
@@ -38,7 +38,7 @@ public abstract class People implements Payable {
     public void setID(String ID) { this.ID = ID; }
     public void setPhoneNumber(int phoneNumber) { this.phone_number = phoneNumber; }
     public void setEmail(String email) { this.email = email; }
-    public void setStreetNumber(int streetNumber) { this.street_number = streetNumber; }
+    public void setStreetNumber(String streetNumber) { this.street_number = streetNumber; }
     public void setCity(String city) { this.city = city; }
     public void setState(String state) { this.state = state; }
     public void setZipcode(int zipcode) { this.zipcode = zipcode; }
@@ -49,7 +49,7 @@ public abstract class People implements Payable {
     public String getID() { return ID; }
     public int getPhoneNumber() { return phone_number; }
     public String getEmail() { return email; }
-    public int getStreetNumber() { return street_number; }
+    public String getStreetNumber() { return street_number; }
     public String getCity() { return city; }
     public String getState() { return state; }
     public int getZipcode() { return zipcode; }

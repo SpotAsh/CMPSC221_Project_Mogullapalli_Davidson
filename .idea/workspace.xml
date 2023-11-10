@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cb380ac9-e20b-4fb8-a7d3-e433dc9d7402" name="Changes" comment=":)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Advisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Advisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698265203492</updated>
       <workItem from="1698709375244" duration="9354000" />
-      <workItem from="1699585597753" duration="1808000" />
+      <workItem from="1699585597753" duration="5982000" />
     </task>
     <task id="LOCAL-00001" summary="all changes are in People.java&#10;defined variables&#10;wrote constructor&#10;getters and setters">
       <created>1698268031990</created>
@@ -101,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699593681116</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=":)">
+      <option name="closed" value="true" />
+      <created>1699625456864</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699625456864</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

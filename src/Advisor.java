@@ -8,7 +8,7 @@ public class Advisor extends People{
 
     //constructor
     public Advisor(String firstName, String middleName, String lastName, String ID, int phone, String email,
-                   int street_number, String city, String state, int zipcode,
+                   String street_number, String city, String state, int zipcode,
                    String title, double annualSalary, LocalDate hiredDate, Student[] advisees) {
         super(firstName, middleName, lastName, ID, phone, email, street_number, city, state, zipcode);
         this.title = title;

@@ -1,7 +1,10 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -57,6 +60,9 @@ public class Main {
         System.out.print("Enter the first name: ");
         String firstName = scanner.next();
 
+        System.out.println("Enter the middle name: ");
+        String middleName = scanner.next();
+
         System.out.print("Enter the last name: ");
         String lastName = scanner.next();
 
@@ -64,13 +70,13 @@ public class Main {
         String ID = scanner.next();
 
         System.out.print("Enter the phone number: ");
-        String phone = scanner.next();
+        int phone = Integer.parseInt(scanner.next());
 
         System.out.print("Enter the email: ");
         String email = scanner.next();
 
         System.out.print("Enter the street: ");
-        String street = scanner.next();
+        String street_number = scanner.next();
 
         System.out.print("Enter the city: ");
         String city = scanner.next();
@@ -79,20 +85,21 @@ public class Main {
         String state = scanner.next();
 
         System.out.print("Enter the zipcode: ");
-        String zipcode = scanner.next();
+        int zipcode = Integer.parseInt(scanner.next());
 
         System.out.print("Enter the title: ");
         String title = scanner.next();
 
         System.out.print("Enter the annual salary: ");
-        String annualSalary = scanner.next();
+        double annualSalary = Double.parseDouble(scanner.next());
 
         System.out.print("Enter the hire date (yyyy-MM-dd): ");
-        String hiredDate = scanner.next();
+        LocalDate hiredDate = LocalDate.parse(scanner.next());
 
         // Create and add a new advisor to the list
-        Advisor newAdvisor = new Advisor(firstName, lastName, ID, phone, email, street, city, state, zipcode,
-                title, annualSalary, hiredDate, new Student[]{});
+        Advisor newAdvisor = new Advisor(firstName, middleName, lastName, ID, phone, email, street_number, city, state,
+                zipcode, title, annualSalary, hiredDate, new Student[]{});
+
         advisors.add(newAdvisor);
 
         System.out.println("Advisor added successfully.");
@@ -135,7 +142,7 @@ public class Main {
             advisorToEdit.setEmail(scanner.next());
 
             System.out.print("Enter the new street number: ");
-            advisorToEdit.setStreetNumber(scanner.nextInt());
+            advisorToEdit.setStreetNumber(String.valueOf(scanner.next()));
 
             System.out.print("Enter the new city: ");
             advisorToEdit.setCity(scanner.next());
@@ -155,10 +162,10 @@ public class Main {
             System.out.print("Enter the new hired date (yyyy-MM-dd): ");
             try {
                 String hiredDateString = scanner.next();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date hiredDate = dateFormat.parse(hiredDateString);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate hiredDate = LocalDate.parse(hiredDateString, formatter);
                 advisorToEdit.setHiredDate(hiredDate);
-            } catch (ParseException e) {
+            } catch (DateTimeParseException e) {
                 e.printStackTrace();
                 // if the input doesn't match the given format, the code will throw an error and
                 // tell the user what the correct format is
@@ -216,26 +223,27 @@ public class Main {
         Course[] courses = {course1, course2};
 
         // Create a student
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date admittedDate = null;
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate admittedDate = null;
         try {
-            admittedDate = dateFormat.parse("2023-09-01");
-        } catch (ParseException e) {
+            admittedDate = LocalDate.parse("2023-09-01", formatter1);
+        } catch (DateTimeParseException e) {
             e.printStackTrace();
         }
         Student student = new Student("John", "Doe", "Smith", "12345",
-                555555555, "john@example.com", 123, "Springfield", "IL",
+                555555555, "john@example.com", "123", "Springfield", "IL",
                 62701, "Computer Science", 2500.00, admittedDate, courses);
 
         // Create an advisor
-        Date hiredDate = null;
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate hiredDate = null;
         try {
-            hiredDate = dateFormat.parse("2022-01-15");
-        } catch (ParseException e) {
+            hiredDate = LocalDate.parse("2022-01-15", formatter2);
+        } catch (DateTimeParseException e) {
             e.printStackTrace();
         }
         Advisor advisor = new Advisor("Alice", "Advisor", "Johnson", "56789",
-                555555556, "alice@example.com", 456, "Springfield", "IL",
+                555555556, "alice@example.com", "456", "Springfield", "IL",
                 62702, "Academic Advisor", 60000.00, hiredDate, new Student[]{student});
 
         advisors.add(advisor);

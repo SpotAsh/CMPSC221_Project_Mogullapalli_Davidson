@@ -9,7 +9,7 @@ public class Student extends People{
 
     //constructor
     public Student(String firstName, String middleName, String lastName, String academicID, int phone, String email,
-                   int street_number, String city, String state, int zipcode, String major, double tuitionPerSemester,
+                   String street_number, String city, String state, int zipcode, String major, double tuitionPerSemester,
                    LocalDate admittedDate, Course[] courses){
         super(firstName, middleName, lastName, academicID, phone, email, street_number, city, state, zipcode);
         this.major = major;
