@@ -36,7 +36,6 @@ public class Advisor extends People{
         System.out.println("Advisor's monthly payment: " + monthlyPayment);
     }
     public void display(){
-        System.out.println("Title: " + title);
-        System.out.println("Hired Date: " + hiredDate);
+        System.out.println("Name: ");
     }
 }

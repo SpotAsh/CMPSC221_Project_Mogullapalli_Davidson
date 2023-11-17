@@ -1,12 +1,9 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.time.LocalDate; // getting the time
+import java.time.format.DateTimeFormatter; // formatting the time
+import java.time.format.DateTimeParseException;  // error checking the time
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.List;  // to use lists
+import java.util.Scanner;  // for user inputs
 
 public class Main {
     private static List<Advisor> advisors = new ArrayList<>();
@@ -30,23 +27,15 @@ public class Main {
             int choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    addAdvisor();
-                    break;
-                case 2:
-                    editAdvisor();
-                    break;
-                case 3:
-                    deleteAdvisor();
-                    break;
-                case 4:
-                    displayAdvisorInformation();
-                    break;
-                case 5:
+                case 1 -> addAdvisor();
+                case 2 -> editAdvisor();
+                case 3 -> deleteAdvisor();
+                case 4 -> displayAdvisorInformation();
+                case 5 -> {
                     System.out.println("Exiting the application.");
                     System.exit(0);
-                default:
-                    System.out.println("Invalid option. Please choose a valid option.");
+                }
+                default -> System.out.println("Invalid option. Please choose a valid option.");
             }
         }
     }

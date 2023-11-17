@@ -1,7 +1,7 @@
 // people superclass which implements the payable interface
 public abstract class People implements Payable {
     // variables
-    //Name
+    //name
     private String f_name;
     private String m_name;
     private String l_name;
@@ -10,7 +10,7 @@ public abstract class People implements Payable {
     private int phone_number;
     private String email;
 
-    //Address
+    //address
     private String street_number;
     private String city;
     private String state;

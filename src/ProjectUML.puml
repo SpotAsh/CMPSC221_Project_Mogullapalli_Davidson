@@ -1,0 +1,89 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Payable
+
+class People{
+    -firstName: String
+    -middleName: String
+    -lastName: String
+    -academicID: String
+    -phone: String
+    -email: String
+    -address: String
+    ----
+    +People()
+    +People(firstName: String, middleName: String, lastName: String,
+    academicID: String, phone: String, email: String, address: String)
+    +setName(firstName: String, middleName: String, lastName: String)
+    +setAcademicID(academicID: String)
+    +setPhone(phone: String)
+    +setEmail(email: String)
+    +setAddress(address: String)
+    +getName() : String
+    +getAcademicID() : String
+    +getPhone() : String
+    +getEmail() : String
+    +getAddress() : String
+    +Payment() : void
+    +abstract Display() : void
+}
+
+
+class Advisor{
+    -title: String
+    -annualSalary: double
+    -hireDate: Date
+    -advisees: List<Student>
+    ----
+    +Advisor()
+    +Advisor(title: String, annualSalary : double, hireDate : Date)
+    +setTitle(title: String): void
+    +setAnnualSalary( annualSalary : double) : void
+    +setHireDate(hireDate : Date) : void
+    +getAdvisees() : List<String>
+    +Display() : void
+}
+
+class Student{
+    -major: String
+    -tuition: double
+    -admitDate: Date
+    -courses: List<Course>
+    ---
+    +Student()
+    +Student(major : String, tuition : double, admitDate: Date)
+    +setMajor(major : String) : void
+    +setTuition(tuition : double) : void
+    +setAdmitDate(admitDate : Date) : void
+    +setCourses(courses : List<Course>) : void
+    +calculateTuition() : double
+}
+
+class Course{
+    -courseNumber : String
+    -credits : int
+    -pricePerCredit: double
+    ----
+    +Course()
+    +Course(courseNumber: String, credits : int, pricePerCredit: double)
+    +setCourseNumber(courseNumber : String) : void
+    +setCredits(credits: int) : void
+    +setPricePerCredit(pricePerCredit : double) : void
+    +getCourseNumber() : String
+    +getCredits() : int
+    +getPricePerCredit() : double
+    +Display() : void
+}
+
+
+People --> Advisor
+People --> Student
+Advisor --> Course
+Student --> Course
+
+
+
+Payable o-- People
+
+@enduml
